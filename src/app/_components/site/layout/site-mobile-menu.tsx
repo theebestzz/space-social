@@ -33,7 +33,7 @@ export function SiteMobileMenu() {
           </Button>
         </DrawerTrigger>
         <DrawerContent>
-          <div className="mt-5 flex flex-col justify-between gap-10">
+          <div className="flex flex-col justify-between">
             <div>
               {links.map((link) => (
                 <DrawerFooter
@@ -43,7 +43,7 @@ export function SiteMobileMenu() {
                   <DrawerClose asChild>
                     <Link
                       href={link.href}
-                      className="rounded px-2 py-4 text-xl font-bold duration-200 hover:bg-primary-foreground dark:hover:bg-primary-foreground"
+                      className="rounded p-2 text-xl font-bold duration-200 hover:bg-primary-foreground dark:hover:bg-primary-foreground"
                     >
                       {link.title}
                     </Link>
