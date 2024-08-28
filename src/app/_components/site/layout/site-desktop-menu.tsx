@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
 import { CgMenuLeft } from "react-icons/cg";
+
+import { getHamburgerLinks } from "@/data/links";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { getHamburgerLinks } from "@/data/links";
+import { Link } from "@/i18n/navigation";
 
 export function SiteDesktopMenu() {
   const links = getHamburgerLinks();

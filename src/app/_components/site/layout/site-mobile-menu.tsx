@@ -1,14 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import { NavLink } from "@/types/types";
+
+import { Link } from "@/i18n/navigation";
 
 import { CgMenuRight } from "react-icons/cg";
 import { User2, UserPlus2 } from "lucide-react";
 
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
-
-import { getNavLinks } from "@/data/links";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -22,8 +22,11 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-export function SiteMobileMenu() {
-  const links = getNavLinks();
+interface SiteMobileMenuProps {
+  links: NavLink[];
+}
+
+export function SiteMobileMenu({ links }: SiteMobileMenuProps) {
   return (
     <div className="relative">
       <Drawer>
@@ -60,7 +63,7 @@ export function SiteMobileMenu() {
                     size="lg"
                     className="flex items-center gap-1"
                   >
-                    <Link href="/auth/login">
+                    <Link href="/login">
                       <User2 />
                       Login
                     </Link>
@@ -73,7 +76,7 @@ export function SiteMobileMenu() {
                     size="lg"
                     className="flex items-center gap-1"
                   >
-                    <Link href="/auth/register">
+                    <Link href="/register">
                       <UserPlus2 />
                       Register
                     </Link>

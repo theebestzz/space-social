@@ -1,28 +1,32 @@
-export function getNavLinks() {
+import { NavLink } from "@/types/types";
+import { getTranslations } from "next-intl/server";
+
+export async function getNavLinks(): Promise<NavLink[]> {
+  const t = await getTranslations("site.layout.header.navbar");
   return [
     {
       id: 1,
-      title: "Home",
+      title: t("home"),
       href: "/",
     },
     {
       id: 2,
-      title: "About",
+      title: t("about"),
       href: "/about",
     },
     {
       id: 3,
-      title: "Social",
+      title: t("social"),
       href: "/social",
     },
     {
       id: 4,
-      title: "News",
+      title: t("news"),
       href: "/news",
     },
     {
       id: 5,
-      title: "Contact",
+      title: t("contact"),
       href: "/contact",
     },
   ];

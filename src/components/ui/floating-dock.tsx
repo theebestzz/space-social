@@ -4,6 +4,7 @@
  * Mobile navbar is better positioned at bottom right.
  **/
 
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
@@ -14,7 +15,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({

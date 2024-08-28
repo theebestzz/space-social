@@ -1,0 +1,23 @@
+{
+  "site": {
+    "layout": {
+      "header": {
+        "navbar": {
+          "home": "Home",
+          "about": "About",
+          "social": "Social",
+          "news": "News",
+          "contact": "Contact"
+        }
+      }
+    },
+    "hero": {
+      "title": "Cosmos Nexus",
+      "subtitle": "A Home Beyond the Stars, United for Earth."
+    },
+    "404": {
+      "title": "Page not found!",
+      "return": "Return to Home"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "site": {
+    "layout": {
+      "header": {
+        "navbar": {
+          "home": "Anasayfa",
+          "about": "Hakkımızda",
+          "social": "Sosyal",
+          "news": "Haberler",
+          "contact": "İletişim"
+        }
+      }
+    },
+    "hero": {
+      "title": "Cosmos Nexus",
+      "subtitle": "Yıldızların Ötesinde Bir Ev, Dünya İçin Birleştik."
+    },
+    "404": {
+      "title": "Sayfa Bulunamadı!",
+      "return": "Anasayfa'ya Dön"
+    }
+  }
+}
