@@ -96,7 +96,7 @@ export function LoginForm() {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-4">
-            {!showTwoFactor && (
+            {showTwoFactor && (
               <FormField
                 control={form.control}
                 name="code"
@@ -104,27 +104,14 @@ export function LoginForm() {
                   <FormItem>
                     <FormLabel>{t("auth.login.code")}</FormLabel>
                     <FormControl>
-                      <InputOTP maxLength={6} {...field} disabled={isPending}>
-                        <InputOTPGroup>
-                          <InputOTPSlot index={0} />
-                          <InputOTPSlot index={1} />
-                          <InputOTPSlot index={2} />
-                        </InputOTPGroup>
-                        <InputOTPSeparator />
-                        <InputOTPGroup>
-                          <InputOTPSlot index={3} />
-                          <InputOTPSlot index={4} />
-                          <InputOTPSlot index={5} />
-                        </InputOTPGroup>
-                      </InputOTP>
+                      <Input {...field} disabled={isPending} />
                     </FormControl>
-
                     <FormMessage />
                   </FormItem>
                 )}
               />
             )}
-            {showTwoFactor && (
+            {!showTwoFactor && (
               <>
                 <FormField
                   control={form.control}
