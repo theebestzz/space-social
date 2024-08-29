@@ -13,7 +13,8 @@
     },
     "hero": {
       "title": "Cosmos Nexus",
-      "subtitle": "A Home Beyond the Stars, United for Earth."
+      "subtitle": "A Home Beyond the Stars, United for Earth.",
+      "button": "Join Us Now"
     },
     "404": {
       "title": "Page not found!",

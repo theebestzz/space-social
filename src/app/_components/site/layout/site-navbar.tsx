@@ -6,6 +6,7 @@ import { raleway } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { NavLink } from "@/types/types";
+import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 
 interface SiteNavbarProps {
   links: NavLink[];
@@ -16,7 +17,7 @@ export function SiteNavbar({ links }: SiteNavbarProps) {
     <nav className="flex items-center justify-between rounded-full bg-white px-5 py-4 shadow-2xl shadow-purple-50 backdrop-blur-sm dark:bg-primary-foreground/25 dark:shadow-none">
       <SiteDesktopMenu />
 
-      <div className="flex items-center justify-center gap-4">
+      <div className="ml-14 flex items-center justify-center gap-4">
         {links.map((link) => (
           <Link
             key={link.id}
@@ -35,6 +36,7 @@ export function SiteNavbar({ links }: SiteNavbarProps) {
 
       <div className="flex items-center gap-2">
         <LanguageSwitcher />
+        <ThemeSwitcher />
         <Button asChild variant="link">
           <Link href="/login">
             <User2 />
