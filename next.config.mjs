@@ -5,7 +5,6 @@ const withNextIntlConfig = withNextIntl("./src/i18n/index.ts");
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  reactStrictMode: false,
   images: {
     remotePatterns: [
       {

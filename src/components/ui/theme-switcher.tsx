@@ -45,7 +45,7 @@ export function ThemeSwitcher() {
     <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="link"
+          variant="ghost"
           aria-expanded={open}
           className="group pointer-events-auto relative flex w-fit gap-1 px-2 py-4"
           onClick={() => isMobile && openDropdown()}

@@ -100,17 +100,6 @@ export const Cover = ({
       ))}
       <motion.span
         key={String(hovered)}
-        animate={{
-          scale: hovered ? 0.8 : 1,
-          x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
-          y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
-        }}
-        exit={{
-          filter: "none",
-          scale: 1,
-          x: 0,
-          y: 0,
-        }}
         transition={{
           duration: 0.2,
           x: {
@@ -201,9 +190,9 @@ export const Beam = ({
             repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : (delay ?? 1),
           }}
         >
-          <stop stopColor="#f9a8d4" stopOpacity="0" />
-          <stop stopColor="#c084fc" />
-          <stop offset="1" stopColor="#7c3aed" stopOpacity="0" />
+          <stop stopColor="#67e8f9" stopOpacity="0" />
+          <stop stopColor="#38bdf8" />
+          <stop offset="1" stopColor="#2563eb" stopOpacity="0" />
         </motion.linearGradient>
       </defs>
     </motion.svg>
@@ -220,7 +209,7 @@ export const CircleIcon = ({
   return (
     <div
       className={cn(
-        `group pointer-events-none h-2 w-2 animate-pulse rounded-full bg-pink-600 opacity-20 group-hover/cover:hidden group-hover/cover:bg-white group-hover/cover:opacity-100 dark:bg-white`,
+        `group pointer-events-none h-2 w-2 animate-pulse rounded-full bg-sky-600 opacity-20 group-hover/cover:hidden group-hover/cover:bg-white group-hover/cover:opacity-100 dark:bg-white`,
         className,
       )}
     ></div>

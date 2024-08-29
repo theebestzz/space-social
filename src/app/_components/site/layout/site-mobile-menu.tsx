@@ -4,8 +4,7 @@ import { NavLink } from "@/types/types";
 
 import { Link } from "@/i18n/navigation";
 
-import { CgMenuRight } from "react-icons/cg";
-import { User2, UserPlus2 } from "lucide-react";
+import { CgMenuLeft } from "react-icons/cg";
 
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
@@ -31,8 +30,8 @@ export function SiteMobileMenu({ links }: SiteMobileMenuProps) {
     <div className="relative">
       <Drawer>
         <DrawerTrigger asChild>
-          <Button variant="outline" className="text-black dark:text-white">
-            <CgMenuRight className="size-6" />
+          <Button variant="link" className="px-0 text-black dark:text-white">
+            <CgMenuLeft className="size-8" />
           </Button>
         </DrawerTrigger>
         <DrawerContent>
@@ -53,36 +52,6 @@ export function SiteMobileMenu({ links }: SiteMobileMenuProps) {
                   </DrawerClose>
                 </DrawerFooter>
               ))}
-            </div>
-            <div>
-              <DrawerFooter className="flex flex-row items-center justify-center gap-5">
-                <DrawerClose asChild>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="flex items-center gap-1"
-                  >
-                    <Link href="/login">
-                      <User2 />
-                      Login
-                    </Link>
-                  </Button>
-                </DrawerClose>
-                <DrawerClose asChild>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="flex items-center gap-1"
-                  >
-                    <Link href="/register">
-                      <UserPlus2 />
-                      Register
-                    </Link>
-                  </Button>
-                </DrawerClose>
-              </DrawerFooter>
             </div>
             <div className="flex items-center justify-center gap-5">
               <LanguageSwitcher />

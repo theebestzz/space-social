@@ -2,6 +2,8 @@
 
 import { CgMenuLeft } from "react-icons/cg";
 
+import { Link } from "@/i18n/navigation";
+
 import { getHamburgerLinks } from "@/data/links";
 
 import { Button } from "@/components/ui/button";
@@ -14,14 +16,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Link } from "@/i18n/navigation";
 
 export function SiteDesktopMenu() {
   const links = getHamburgerLinks();
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="link">
+        <Button variant="ghost">
           <CgMenuLeft className="size-8" />
         </Button>
       </SheetTrigger>
@@ -40,11 +41,11 @@ export function SiteDesktopMenu() {
                   <SheetClose asChild key={subLink.href}>
                     <Link
                       href={subLink.href}
-                      className="group relative w-max text-lg font-light hover:text-purple-400"
+                      className="group relative w-max text-lg font-light hover:text-cyan-400"
                     >
                       <span>{subLink.label}</span>
-                      <span className="absolute -bottom-1 left-1/2 h-[2px] w-0 bg-white transition-all group-hover:w-1/2 group-hover:bg-purple-400"></span>
-                      <span className="absolute -bottom-1 right-1/2 h-[2px] w-0 bg-white transition-all group-hover:w-1/2 group-hover:bg-purple-400"></span>
+                      <span className="absolute -bottom-1 left-1/2 h-[2px] w-0 bg-white transition-all group-hover:w-1/2 group-hover:bg-cyan-400"></span>
+                      <span className="absolute -bottom-1 right-1/2 h-[2px] w-0 bg-white transition-all group-hover:w-1/2 group-hover:bg-cyan-400"></span>
                     </Link>
                   </SheetClose>
                 ))}

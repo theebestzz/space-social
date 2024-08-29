@@ -21,11 +21,11 @@ export function HomeBlock() {
         className="mx-auto space-y-3 p-4"
       >
         <Cover>
-          <h1 className="relative z-10 w-full bg-gradient-to-r from-pink-300 via-purple-400 to-violet-600 bg-clip-text text-center text-4xl font-bold text-transparent dark:from-pink-200 dark:via-purple-400 md:text-7xl">
+          <h1 className="relative z-10 w-full bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-600 bg-clip-text text-center text-4xl font-bold text-transparent dark:from-cyan-200 dark:via-sky-400 md:text-7xl">
             {t("title")}
           </h1>
         </Cover>
-        <h2 className="relative z-10 bg-gradient-to-bl from-black/50 to-black bg-clip-text text-center text-lg text-transparent drop-shadow-2xl md:from-black md:to-slate-200 md:text-2xl">
+        <h2 className="relative z-10 bg-gradient-to-bl from-black/50 to-black bg-clip-text text-center text-lg text-transparent drop-shadow-2xl dark:from-transparent dark:to-white md:text-2xl">
           {t("subtitle")}
         </h2>
       </motion.div>

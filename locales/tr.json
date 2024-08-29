@@ -9,16 +9,78 @@
           "news": "Haberler",
           "contact": "İletişim"
         }
+      },
+      "userMenu": {
+        "profile": "Hesabım",
+        "settings": "Ayarlar",
+        "logout": "Çıkış Yap",
+        "welcome": "Hoş Geldin",
+        "loggedOut": "Çıkış Yapıldı"
       }
     },
     "hero": {
-      "title": "Cosmos Nexus",
+      "title": "SpaceX",
       "subtitle": "Yıldızların Ötesinde Bir Ev, Dünya İçin Birleştik.",
       "button": "Sende Aramıza Katıl"
     },
     "404": {
       "title": "Sayfa Bulunamadı!",
       "return": "Anasayfa'ya Dön"
-    }
+    },
+    "auth": {
+      "login": {
+        "title": "Tekrar Hoşgeldiniz",
+        "button": "Giriş Yap",
+        "forgot": "Şifreni mi Unuttun?",
+        "account": "Hesabınız yok mu?",
+        "or": "veya",
+        "oAuthAccountNotLinked": "E-posta farklı bir hesapla zaten kullanılıyor",
+        "code": "2 Adımlı Doğrulama",
+        "confirm": "Onayla",
+        "success": "Giriş Yapıldı"
+      },
+      "register": {
+        "title": "Yeni Bir SpaceX Hesabı Oluştur",
+        "button": "Kayıt Ol",
+        "already": "Hesabınız zaten var mı?"
+      },
+      "forms": {
+        "name": "Ad & Soyad",
+        "email": "E-Posta",
+        "password": "Şifre",
+        "nameRequired": "Ad, soyad alanı zorunludur",
+        "emailRequired": "E-posta alanı zorunludur",
+        "passwordRequired": "Şifre alanı zorunludur",
+        "passwordAtLeast": "Şifre en az 6 karakter olmalıdır"
+      },
+      "verify": {
+        "title": "E-posta adresinizi onaylayın",
+        "back": "Giriş yapın"
+      },
+      "newPassword": {
+        "title": "Yeni şifrenizi belirleyin",
+        "button": "Şifre Yenile",
+        "back": "Giriş yapın"
+      }
+    },
+    "error": {
+      "default": "Bir hata oluştu, lütfen tekrar deneyin",
+      "token": "Geçersiz token"
+    },
+    "default": "Bir hata oluştu, lütfen tekrar deneyin",
+    "invalidField": "Geçersiz alan!",
+    "emailNotFound": "E-posta bulunamadı!",
+    "verifyEmail": "E-posta adresinizi onaylayın",
+    "invalidCode": "Geçersiz kod!",
+    "codeExpired": "Kodunuzun süresi dolmuş",
+    "invalidCrendentials": "Geçersiz kimlik bilgileri!",
+    "invalidToken": "Geçersiz token!",
+    "missingToken": "Token bulunamadı!",
+    "tokenExpired": "Token suresi dolmuş",
+    "passwordChanged": "Şifre değiştirildi",
+    "emailVerified": "E-posta adresiniz onaylandı",
+    "emailAlreadyInUse": "E-posta adresi zaten kullanılıyor",
+    "checkEmail": "Tebrikler! Lütfen hesabınızı doğrulamak için e-postanızı kontrol edin.",
+    "resetEmailSent": "Sıfırlama e-postası gönderildi"
   }
 }
