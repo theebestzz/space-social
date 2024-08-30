@@ -93,7 +93,7 @@ export async function login(values: Record<string, any>) {
     await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      redirectTo: DEFAULT_LOGIN_REDIRECT,
     });
     return { success: t("auth.login.success") }; // Başarı mesajı döndür
   } catch (error) {

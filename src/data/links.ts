@@ -1,6 +1,5 @@
 import { NavLink } from "@/types/types";
 import { getTranslations } from "next-intl/server";
-import { UserCog2 } from "lucide-react";
 
 export async function getNavLinks(): Promise<NavLink[]> {
   const t = await getTranslations("site.layout.header.navbar");

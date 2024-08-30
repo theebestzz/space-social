@@ -1,10 +1,21 @@
+import EnFlag from "../../public/en.png";
+import TrFlag from "../../public/tr.png";
+
 export const defaultLocale: string = "en";
 
 export const locales: string[] = ["en", "tr"];
 
-export const labels: { [key: string]: string } = {
-  en: "English",
-  tr: "Türkçe",
+export const labels: {
+  [key: string]: { name: string; flag: any };
+} = {
+  en: {
+    name: "English",
+    flag: EnFlag,
+  },
+  tr: {
+    name: "Türkçe",
+    flag: TrFlag,
+  },
 };
 
 export const pathnames: { [key: string]: { en: string; tr: string } | string } =
@@ -69,6 +80,21 @@ export const pathnames: { [key: string]: { en: string; tr: string } | string } =
     "/settings": {
       en: "/settings",
       tr: "/ayarlar",
+    },
+
+    "/messages": {
+      en: "/messages",
+      tr: "/mesajlar",
+    },
+
+    "/friends": {
+      en: "/friends",
+      tr: "/arkadaslar",
+    },
+
+    "/notifications": {
+      en: "/notifications",
+      tr: "/bildirimler",
     },
   };
 

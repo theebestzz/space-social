@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 
 import { useIsMobile } from "@/hooks/use-is-mobile";
 
-import { LogOut, UserCog2 } from "lucide-react";
+import { Bell, LogOut, MessageCircleMore, UserCog2 } from "lucide-react";
 import { CgProfile } from "react-icons/cg";
 import { useTranslations } from "next-intl";
 
@@ -23,6 +23,7 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
+import { LiaUserFriendsSolid } from "react-icons/lia";
 
 interface SiteUserMenuProps {
   user: any;
@@ -46,6 +47,9 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
     setOpen(() => false);
   }
 
+  const menuItemClass =
+    "flex w-full cursor-pointer select-none items-center gap-2 group-hover:text-cyan-500 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50";
+
   return (
     <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
       <DropdownMenuTrigger asChild>
@@ -61,7 +65,7 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
             {user?.image ? (
               <AvatarImage src={user?.image} />
             ) : (
-              <AvatarFallback>
+              <AvatarFallback className="bg-primary-foreground">
                 {user?.name?.charAt(0).toUpperCase()}
               </AvatarFallback>
             )}
@@ -82,28 +86,53 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
             👋 {t("layout.userMenu.hello")}, {user?.name}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
-            <Link
-              href="/profile"
-              className="flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sky-700 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
-            >
-              <CgProfile className="size-7" /> {t("layout.userMenu.profile")}
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link
-              href="/settings"
-              className="flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sky-700 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
-            >
-              <UserCog2 className="size-7" /> {t("layout.userMenu.settings")}
-            </Link>
-          </DropdownMenuItem>
+          <div className="group">
+            <DropdownMenuItem asChild>
+              <Link href="/profile" className={menuItemClass}>
+                <CgProfile className="size-7 group-hover:text-cyan-500" />{" "}
+                {t("layout.userMenu.profile")}
+              </Link>
+            </DropdownMenuItem>
+          </div>
+          <div className="group">
+            <DropdownMenuItem asChild>
+              <Link href="/messages" className={menuItemClass}>
+                <MessageCircleMore className="size-7" />{" "}
+                {t("layout.userMenu.messages")}
+              </Link>
+            </DropdownMenuItem>
+          </div>
+          <div className="group">
+            <DropdownMenuItem asChild>
+              <Link href="/friends" className={menuItemClass}>
+                <LiaUserFriendsSolid className="size-7" />{" "}
+                {t("layout.userMenu.friends")}
+              </Link>
+            </DropdownMenuItem>
+          </div>
+          <div className="group">
+            <DropdownMenuItem asChild>
+              <Link href="/notifications" className={menuItemClass}>
+                <Bell className="size-7" /> {t("layout.userMenu.notifications")}
+              </Link>
+            </DropdownMenuItem>
+          </div>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="p-0">
-            <LogoutButton className="flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sky-700 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
-              <LogOut className="size-7" /> {t("layout.userMenu.logout")}
-            </LogoutButton>
-          </DropdownMenuItem>
+          <div className="group">
+            <DropdownMenuItem asChild>
+              <Link href="/settings" className={menuItemClass}>
+                <UserCog2 className="size-7" /> {t("layout.userMenu.settings")}
+              </Link>
+            </DropdownMenuItem>
+          </div>
+          <DropdownMenuSeparator />
+          <div className="group">
+            <DropdownMenuItem className="p-0">
+              <LogoutButton className={menuItemClass}>
+                <LogOut className="size-7" /> {t("layout.userMenu.logout")}
+              </LogoutButton>
+            </DropdownMenuItem>
+          </div>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

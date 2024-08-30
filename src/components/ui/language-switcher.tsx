@@ -1,3 +1,5 @@
+// language-switcher.tsx
+
 "use client";
 
 import { type PointerEvent, useState } from "react";
@@ -15,6 +17,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
+import Image from "next/image";
 
 const locales = Object.entries(labels);
 
@@ -70,13 +73,15 @@ export function LanguageSwitcher() {
         onCloseAutoFocus={(e) => e.preventDefault()}
       >
         <div className="w-full">
-          {locales.map(([locale, label]) => (
+          {locales.map(([locale, { name, flag }]) => (
             <DropdownMenuItem
               key={locale}
               onClick={() => changeLocale(locale)}
               disabled={currentLocale === locale}
+              className="flex cursor-pointer items-center gap-2"
             >
-              {label}
+              <Image src={flag} alt={`${name} flag`} width={25} height={25} />
+              {name}
             </DropdownMenuItem>
           ))}
         </div>

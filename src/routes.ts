@@ -26,7 +26,14 @@ export const authRoutes = [
 export const apiAuthPrefix = "/api/auth";
 
 /**
+ * The prefix for API authentication routes
+ * Routes that start with this prefix are used for API authentication purposes
+ * @type {string}
+ */
+export const xPage = "/x";
+
+/**
  * The default redirect path after logging in
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/";
+export const DEFAULT_LOGIN_REDIRECT = "/x";

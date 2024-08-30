@@ -15,17 +15,20 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
+import { useTranslations } from "next-intl";
 
 export function ThemeSwitcher() {
+  const t = useTranslations("site.theme");
+
   const isMobile = useIsMobile();
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
   const themes = useMemo(() => {
     return [
-      { label: "Dark", value: "dark" },
-      { label: "Light", value: "light" },
-      { label: "System", value: "system" },
+      { label: t("dark"), value: "dark" },
+      { label: t("light"), value: "light" },
+      { label: t("system"), value: "system" },
     ];
   }, []);
 
