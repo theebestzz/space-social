@@ -16,8 +16,8 @@ export function LogoutButton({ children, className }: LogoutButtonProps) {
     toast.success(t("loggedOut"));
   };
   return (
-    <a onClick={onClick} className={className}>
+    <span onClick={onClick} className={className}>
       {children}
-    </a>
+    </span>
   );
 }

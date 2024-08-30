@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.aceternity.com",
+        hostname: "lh3.googleusercontent.com",
         port: "",
         pathname: "/**",
       },

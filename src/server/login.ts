@@ -93,8 +93,9 @@ export async function login(values: Record<string, any>) {
     await signIn("credentials", {
       email,
       password,
-      redirectTo: DEFAULT_LOGIN_REDIRECT,
+      redirect: false,
     });
+    return { success: t("auth.login.success") }; // Başarı mesajı döndür
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

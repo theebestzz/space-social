@@ -14,7 +14,7 @@
         "profile": "My Profile",
         "settings": "Settings",
         "logout": "Logout",
-        "welcome": "Welcome",
+        "hello": "Hello",
         "loggedOut": "Logout Success"
       }
     },

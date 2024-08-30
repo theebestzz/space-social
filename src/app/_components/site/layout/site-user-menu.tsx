@@ -6,6 +6,12 @@ import { Link } from "@/i18n/navigation";
 
 import { useIsMobile } from "@/hooks/use-is-mobile";
 
+import { LogOut, UserCog2 } from "lucide-react";
+import { CgProfile } from "react-icons/cg";
+import { useTranslations } from "next-intl";
+
+import { LogoutButton } from "@/app/_components/auth/logout-button";
+
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -16,10 +22,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { useTranslations } from "next-intl";
-import { LogoutButton } from "../../auth/logout-button";
-import { LogOut, UserCog2 } from "lucide-react";
-import { CgProfile } from "react-icons/cg";
+import Image from "next/image";
 
 interface SiteUserMenuProps {
   user: any;
@@ -55,10 +58,13 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
           onPointerLeave={(event) => !isMobile && closeDropdown(event)}
         >
           <Avatar>
-            {user?.image && <AvatarImage src={user?.image} />}
-            <AvatarFallback>
-              {user?.name?.charAt(0).toUpperCase()}
-            </AvatarFallback>
+            {user?.image ? (
+              <AvatarImage src={user?.image} />
+            ) : (
+              <AvatarFallback>
+                {user?.name?.charAt(0).toUpperCase()}
+              </AvatarFallback>
+            )}
           </Avatar>
           <span className="pointer-events-auto absolute z-10 block h-14 w-full" />
         </Button>
@@ -73,28 +79,28 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
       >
         <div>
           <DropdownMenuLabel className="text-center text-base capitalize">
-            👋 {t("layout.userMenu.welcome")}, {user?.name}
+            👋 {t("layout.userMenu.hello")}, {user?.name}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild className="text-base">
+          <DropdownMenuItem asChild>
             <Link
               href="/profile"
-              className="lex !hover:bg-sky-700 !hover:text-white w-full cursor-pointer items-center gap-2"
+              className="flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sky-700 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
             >
               <CgProfile className="size-7" /> {t("layout.userMenu.profile")}
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem asChild className="text-base">
+          <DropdownMenuItem asChild>
             <Link
               href="/settings"
-              className="lex !hover:bg-sky-700 !hover:text-white w-full cursor-pointer items-center gap-2"
+              className="flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sky-700 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
             >
               <UserCog2 className="size-7" /> {t("layout.userMenu.settings")}
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild className="text-base">
-            <LogoutButton className="flex w-full cursor-pointer items-center gap-2 hover:bg-sky-700 hover:text-white">
+          <DropdownMenuItem className="p-0">
+            <LogoutButton className="flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-sky-700 hover:text-white focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
               <LogOut className="size-7" /> {t("layout.userMenu.logout")}
             </LogoutButton>
           </DropdownMenuItem>

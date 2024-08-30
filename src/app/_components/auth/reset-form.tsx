@@ -7,6 +7,8 @@ import { LoaderCircle } from "lucide-react";
 
 import { reset } from "@/server/reset";
 
+import { useTranslations } from "next-intl";
+
 import { useForm } from "react-hook-form";
 import { ResetSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,18 +29,21 @@ import {
 } from "@/components/ui/form";
 
 export function ResetForm() {
+  const t = useTranslations();
+  const schema = ResetSchema(t);
+
   const [error, setError] = React.useState<string | undefined>("");
   const [success, setSuccess] = React.useState<string | undefined>("");
   const [isPending, startTransition] = React.useTransition();
 
-  const form = useForm<z.infer<typeof ResetSchema>>({
-    resolver: zodResolver(ResetSchema),
+  const form = useForm<z.infer<typeof schema>>({
+    resolver: zodResolver(schema),
     defaultValues: {
       email: "",
     },
   });
 
-  const onSubmit = (values: z.infer<typeof ResetSchema>) => {
+  const onSubmit = (values: z.infer<typeof schema>) => {
     setError("");
     setSuccess("");
 

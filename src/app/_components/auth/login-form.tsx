@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as z from "zod";
 
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 
 import { LoaderCircle } from "lucide-react";
 
@@ -23,12 +23,7 @@ import { FormSuccess } from "@/app/_components/auth/form-success";
 import { CardWrapper } from "@/app/_components/auth/card-wrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "@/components/ui/input-otp";
+
 import {
   Form,
   FormControl,
@@ -37,8 +32,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { toast } from "sonner";
 
 export function LoginForm() {
+  const router = useRouter();
   const t = useTranslations("site");
   const schema = LoginSchema(t);
 
@@ -51,7 +48,7 @@ export function LoginForm() {
   const [showTwoFactor, setShowTwoFactor] = React.useState(false);
   const [error, setError] = React.useState<string | undefined>("");
   const [success, setSuccess] = React.useState<string | undefined>("");
-  const [isPending, startTransition] = React.useTransition();
+  const [isPending, setIsPending] = React.useState(false);
 
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
@@ -61,29 +58,29 @@ export function LoginForm() {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof schema>) => {
+  const onSubmit = async (values: z.infer<typeof schema>) => {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
-      login(values)
-        .then((data) => {
-          if (data?.error) {
-            form.reset();
-            setError(data.error);
-          }
+    setIsPending(true);
 
-          if (data?.success) {
-            form.reset();
-            setSuccess(data.success);
-          }
-
-          if (data?.twoFactor) {
-            setShowTwoFactor(true);
-          }
-        })
-        .catch(() => setError(t("error.default") as string));
-    });
+    try {
+      const data = await login(values);
+      if (data?.error) {
+        setError(data.error);
+      } else if (data?.success) {
+        setSuccess(data.success);
+        toast.success(data.success);
+        router.refresh();
+        form.reset();
+      } else if (data?.twoFactor) {
+        setShowTwoFactor(true);
+      }
+    } catch (err) {
+      setError(t("error.default") as string);
+    } finally {
+      setIsPending(false);
+    }
   };
 
   return (
@@ -104,7 +101,12 @@ export function LoginForm() {
                   <FormItem>
                     <FormLabel>{t("auth.login.code")}</FormLabel>
                     <FormControl>
-                      <Input {...field} disabled={isPending} />
+                      <Input
+                        {...field}
+                        type="number"
+                        autoFocus
+                        disabled={isPending}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
