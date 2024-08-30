@@ -16,7 +16,7 @@ export function SiteHeader({ links, user }: any) {
 
   if ((pathname as string).startsWith(xPage)) return null;
   return (
-    <header>
+    <header className="lg:container max-lg:px-5">
       <div className="relative flex items-center justify-between lg:justify-center">
         <div className="flex items-center gap-2">
           <div className="block lg:hidden">

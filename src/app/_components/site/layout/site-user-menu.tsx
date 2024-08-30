@@ -2,7 +2,7 @@
 
 import { type PointerEvent, useState } from "react";
 
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 import { useIsMobile } from "@/hooks/use-is-mobile";
 
@@ -24,12 +24,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { LiaUserFriendsSolid } from "react-icons/lia";
+import { xPage } from "@/routes";
 
 interface SiteUserMenuProps {
   user: any;
 }
 
 export function SiteUserMenu({ user }: SiteUserMenuProps) {
+  const pathname = usePathname();
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
 
@@ -48,8 +50,7 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
   }
 
   const menuItemClass =
-    "flex w-full cursor-pointer select-none items-center gap-2 group-hover:text-cyan-500 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50";
-
+    "flex w-full cursor-pointer select-none items-center gap-2 py-3 group-hover:text-cyan-500 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50";
   return (
     <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
       <DropdownMenuTrigger asChild>
@@ -61,21 +62,54 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
           onPointerEnter={() => !isMobile && openDropdown()}
           onPointerLeave={(event) => !isMobile && closeDropdown(event)}
         >
-          <Avatar>
-            {user?.image ? (
-              <AvatarImage src={user?.image} />
-            ) : (
-              <AvatarFallback className="bg-primary-foreground">
-                {user?.name?.charAt(0).toUpperCase()}
-              </AvatarFallback>
-            )}
-          </Avatar>
+          {!(pathname as string).startsWith(xPage) ? (
+            <Avatar>
+              {user.image ? (
+                <Image
+                  src={user?.image}
+                  alt={user?.name}
+                  width={32}
+                  height={32}
+                  className="aspect-square h-full w-full rounded-full"
+                />
+              ) : (
+                <AvatarFallback className="bg-primary-foreground">
+                  {user?.name?.charAt(0).toUpperCase()}
+                </AvatarFallback>
+              )}
+            </Avatar>
+          ) : (
+            <div className="flex items-center gap-2 capitalize">
+              {user.image ? (
+                <Image
+                  src={user?.image}
+                  alt={user?.name}
+                  width={32}
+                  height={32}
+                  className="aspect-square h-full w-full rounded-full"
+                />
+              ) : (
+                <Avatar>
+                  <AvatarFallback className="bg-primary-foreground">
+                    {user?.name?.charAt(0).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              )}
+              <div className="hidden flex-col items-start md:flex">
+                <span>{user?.name}</span>
+                <span className="text-xs font-light">
+                  SpaceX {user?.role.toLowerCase()}
+                </span>
+              </div>
+            </div>
+          )}
+
           <span className="pointer-events-auto absolute z-10 block h-14 w-full" />
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
-        className="flex min-w-72 flex-col"
+        className="flex min-w-72 flex-col shadow-2xl shadow-cyan-50 dark:shadow-none"
         align="center"
         role="menu"
         onPointerLeave={closeDropdown}
@@ -88,40 +122,40 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
           <DropdownMenuSeparator />
           <div className="group">
             <DropdownMenuItem asChild>
-              <Link href="/profile" className={menuItemClass}>
-                <CgProfile className="size-7 group-hover:text-cyan-500" />{" "}
+              <Link href="/x/profile" className={menuItemClass}>
+                <CgProfile className="size-5 group-hover:text-cyan-500" />{" "}
                 {t("layout.userMenu.profile")}
               </Link>
             </DropdownMenuItem>
           </div>
           <div className="group">
             <DropdownMenuItem asChild>
-              <Link href="/messages" className={menuItemClass}>
-                <MessageCircleMore className="size-7" />{" "}
+              <Link href="/x/messages" className={menuItemClass}>
+                <MessageCircleMore className="size-5" />{" "}
                 {t("layout.userMenu.messages")}
               </Link>
             </DropdownMenuItem>
           </div>
           <div className="group">
             <DropdownMenuItem asChild>
-              <Link href="/friends" className={menuItemClass}>
-                <LiaUserFriendsSolid className="size-7" />{" "}
+              <Link href="/x/friends" className={menuItemClass}>
+                <LiaUserFriendsSolid className="size-5" />{" "}
                 {t("layout.userMenu.friends")}
               </Link>
             </DropdownMenuItem>
           </div>
           <div className="group">
             <DropdownMenuItem asChild>
-              <Link href="/notifications" className={menuItemClass}>
-                <Bell className="size-7" /> {t("layout.userMenu.notifications")}
+              <Link href="/x/notifications" className={menuItemClass}>
+                <Bell className="size-5" /> {t("layout.userMenu.notifications")}
               </Link>
             </DropdownMenuItem>
           </div>
           <DropdownMenuSeparator />
           <div className="group">
             <DropdownMenuItem asChild>
-              <Link href="/settings" className={menuItemClass}>
-                <UserCog2 className="size-7" /> {t("layout.userMenu.settings")}
+              <Link href="/x/settings" className={menuItemClass}>
+                <UserCog2 className="size-5" /> {t("layout.userMenu.settings")}
               </Link>
             </DropdownMenuItem>
           </div>
@@ -129,7 +163,7 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
           <div className="group">
             <DropdownMenuItem className="p-0">
               <LogoutButton className={menuItemClass}>
-                <LogOut className="size-7" /> {t("layout.userMenu.logout")}
+                <LogOut className="size-5" /> {t("layout.userMenu.logout")}
               </LogoutButton>
             </DropdownMenuItem>
           </div>

@@ -10,7 +10,7 @@ export async function SiteLayout({ children }: Props) {
   const links = await getNavLinks();
   const user = await getUser();
   return (
-    <div className="lg:container max-lg:px-5">
+    <div>
       <SiteHeader links={links} user={user} />
       {children}
     </div>

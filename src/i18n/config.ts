@@ -72,29 +72,29 @@ export const pathnames: { [key: string]: { en: string; tr: string } | string } =
       tr: "/hata",
     },
 
-    "/profile": {
-      en: "/profile",
-      tr: "/profil",
+    "/x/profile": {
+      en: "/x/profile",
+      tr: "/x/profil",
     },
 
-    "/settings": {
-      en: "/settings",
-      tr: "/ayarlar",
+    "x/settings": {
+      en: "x/settings",
+      tr: "x/ayarlar",
     },
 
-    "/messages": {
-      en: "/messages",
-      tr: "/mesajlar",
+    "x/messages": {
+      en: "x/messages",
+      tr: "x/mesajlar",
     },
 
-    "/friends": {
-      en: "/friends",
-      tr: "/arkadaslar",
+    "x/friends": {
+      en: "x/friends",
+      tr: "x/arkadaslar",
     },
 
-    "/notifications": {
-      en: "/notifications",
-      tr: "/bildirimler",
+    "x/notifications": {
+      en: "x/notifications",
+      tr: "x/bildirimler",
     },
   };
 

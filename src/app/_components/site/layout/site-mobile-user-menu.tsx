@@ -50,7 +50,7 @@ export function SiteMobileUserMenu({ user }: SiteMobileMenuProps) {
           <div className="mt-5 flex flex-col justify-between">
             <DrawerClose asChild>
               <Link
-                href="/profile"
+                href="/x/profile"
                 className="flex items-center gap-2 rounded px-2 py-4 hover:bg-primary-foreground"
               >
                 <CgProfile className="size-7" /> {t("layout.userMenu.profile")}
@@ -58,7 +58,7 @@ export function SiteMobileUserMenu({ user }: SiteMobileMenuProps) {
             </DrawerClose>
             <DrawerClose asChild>
               <Link
-                href="/messages"
+                href="/x/messages"
                 className="flex items-center gap-2 rounded px-2 py-4 hover:bg-primary-foreground"
               >
                 <MessageCircleMore className="size-7" />{" "}
@@ -67,7 +67,7 @@ export function SiteMobileUserMenu({ user }: SiteMobileMenuProps) {
             </DrawerClose>
             <DrawerClose asChild>
               <Link
-                href="/friends"
+                href="/x/friends"
                 className="flex items-center gap-2 rounded px-2 py-4 hover:bg-primary-foreground"
               >
                 <LiaUserFriendsSolid className="size-7" />{" "}
@@ -76,7 +76,7 @@ export function SiteMobileUserMenu({ user }: SiteMobileMenuProps) {
             </DrawerClose>
             <DrawerClose asChild>
               <Link
-                href="/notifications"
+                href="/x/notifications"
                 className="flex items-center gap-2 rounded px-2 py-4 hover:bg-primary-foreground"
               >
                 <Bell className="size-7" /> {t("layout.userMenu.notifications")}
@@ -84,7 +84,7 @@ export function SiteMobileUserMenu({ user }: SiteMobileMenuProps) {
             </DrawerClose>
             <DrawerClose asChild>
               <Link
-                href="/settings"
+                href="/x/settings"
                 className="flex items-center gap-2 rounded px-2 py-4 hover:bg-primary-foreground"
               >
                 <Cog className="size-7" /> {t("layout.userMenu.settings")}

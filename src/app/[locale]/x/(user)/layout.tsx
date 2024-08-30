@@ -11,6 +11,8 @@ export default async function Layout({
   if (!user) redirect("/login");
 
   return (
-    <div className="flex h-[45rem] items-center justify-center">{children}</div>
+    <div className="flex min-h-screen items-center justify-center">
+      {children}
+    </div>
   );
 }
