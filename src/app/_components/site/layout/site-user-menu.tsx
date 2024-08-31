@@ -1,4 +1,8 @@
 "use client";
+import Image from "next/image";
+
+import { LiaUserFriendsSolid } from "react-icons/lia";
+import { xPage } from "@/routes";
 
 import { type PointerEvent, useState } from "react";
 
@@ -13,7 +17,7 @@ import { useTranslations } from "next-intl";
 import { LogoutButton } from "@/app/_components/auth/logout-button";
 
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -22,9 +26,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import Image from "next/image";
-import { LiaUserFriendsSolid } from "react-icons/lia";
-import { xPage } from "@/routes";
 
 interface SiteUserMenuProps {
   user: any;
@@ -154,7 +155,7 @@ export function SiteUserMenu({ user }: SiteUserMenuProps) {
           <DropdownMenuSeparator />
           <div className="group">
             <DropdownMenuItem asChild>
-              <Link href="/x/settings" className={menuItemClass}>
+              <Link href="/x/account" className={menuItemClass}>
                 <UserCog2 className="size-5" /> {t("layout.userMenu.settings")}
               </Link>
             </DropdownMenuItem>

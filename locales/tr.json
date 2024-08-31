@@ -17,6 +17,12 @@
         "notifications": "Bildirimler",
         "messages": "Mesajlar",
         "logout": "Çıkış Yap",
+        "account": "Hesap",
+        "accountSubtitle": "Başkaları sizi sitede bu şekilde görecek.",
+        "settingsSubtitle": "Kullanıcı ayarlarınızı düzenleyin.",
+        "preferences": "Tercihler",
+        "security": "Gizlilik ve Güvenlik",
+        "subtitle": "Kullanıcı, hesap ve tercih ayarlarınızı yönetin",
         "hello": "Merhaba",
         "loggedOut": "Çıkış Yapıldı"
       }

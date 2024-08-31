@@ -11,12 +11,18 @@
         }
       },
       "userMenu": {
-        "profile": "My Profile",
+        "profile": "Profile",
         "settings": "Settings",
         "logout": "Logout",
         "friends": "Friends",
         "notifications": "Notifications",
         "messages": "Messages",
+        "account": "Account",
+        "accountSubtitle": "This is how others will see you on the site.",
+        "settingsSubtitle": "Manage your user settings.",
+        "preferences": "Preferences",
+        "security": "Privacy & Security",
+        "subtitle": "Manage your user, account and preference settings",
         "hello": "Hello",
         "loggedOut": "Logout Success"
       }

@@ -1,4 +1,5 @@
 import { getUser } from "@/data/getUser";
+
 import { redirect } from "@/i18n/navigation";
 
 import { Navbar } from "@/app/[locale]/x/_components/social/navbar";
@@ -15,7 +16,7 @@ export default async function XLayout({ children }: XLayoutProps) {
   return (
     <div>
       <Navbar user={user} />
-      <div className="border-t">{children}</div>
+      <div className="border-t md:container max-md:px-2">{children}</div>
     </div>
   );
 }

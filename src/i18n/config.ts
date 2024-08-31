@@ -77,24 +77,39 @@ export const pathnames: { [key: string]: { en: string; tr: string } | string } =
       tr: "/x/profil",
     },
 
-    "x/settings": {
-      en: "x/settings",
-      tr: "x/ayarlar",
+    "/x/settings": {
+      en: "/x/settings",
+      tr: "/x/ayarlar",
     },
 
-    "x/messages": {
-      en: "x/messages",
-      tr: "x/mesajlar",
+    "/x/messages": {
+      en: "/x/messages",
+      tr: "/x/mesajlar",
     },
 
-    "x/friends": {
-      en: "x/friends",
-      tr: "x/arkadaslar",
+    "/x/friends": {
+      en: "/x/friends",
+      tr: "/x/arkadaslar",
     },
 
-    "x/notifications": {
-      en: "x/notifications",
-      tr: "x/bildirimler",
+    "/x/notifications": {
+      en: "/x/notifications",
+      tr: "/x/bildirimler",
+    },
+
+    "/x/account": {
+      en: "/x/account",
+      tr: "/x/hesap",
+    },
+
+    "/x/preferences": {
+      en: "/x/preferences",
+      tr: "/x/tercihler",
+    },
+
+    "/x/security": {
+      en: "/x/security",
+      tr: "/x/guvenlik",
     },
   };
 

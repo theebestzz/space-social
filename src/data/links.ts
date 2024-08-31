@@ -32,6 +32,32 @@ export async function getNavLinks(): Promise<NavLink[]> {
   ];
 }
 
+export async function getSideBarLinks(): Promise<NavLink[]> {
+  const t = await getTranslations("site.layout.userMenu");
+  return [
+    {
+      id: 1,
+      title: t("profile"),
+      href: "/x/account",
+    },
+    {
+      id: 2,
+      title: t("settings"),
+      href: "/x/settings",
+    },
+    {
+      id: 3,
+      title: t("preferences"),
+      href: "/x/preferences",
+    },
+    {
+      id: 4,
+      title: t("security"),
+      href: "/x/security",
+    },
+  ];
+}
+
 export function getHamburgerLinks() {
   return [
     {
