@@ -29,7 +29,7 @@ export default async function Layout({ children, params }: LayoutProps) {
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           <Providers>
             <SiteLayout>
-              <main>{children}</main>
+              <main className="container">{children}</main>
             </SiteLayout>
           </Providers>
         </NextIntlClientProvider>

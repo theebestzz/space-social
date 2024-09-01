@@ -46,7 +46,16 @@ export async function middleware(req: NextRequest) {
   }
 
   if (!isLoggedIn && !isPublicRoute) {
-    return NextResponse.redirect(new URL("/login", nextUrl));
+    let callBackUrl = nextUrl.pathname;
+    if (nextUrl.search) {
+      callBackUrl += nextUrl.search;
+    }
+
+    const encodedCallBackUrl = encodeURIComponent(callBackUrl);
+
+    return NextResponse.redirect(
+      new URL(`/login/?callBackUrl=${encodedCallBackUrl}`, nextUrl),
+    );
   }
 
   return NextResponse.next();

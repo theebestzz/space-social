@@ -58,9 +58,17 @@
         "email": "E-Posta",
         "password": "Şifre",
         "nameRequired": "Ad, soyad alanı zorunludur",
+        "role": "Rol",
+        "selectRole": "Rol Seçin",
         "emailRequired": "E-posta alanı zorunludur",
+        "codeRequired": "Kod alanı zorunludur",
         "passwordRequired": "Şifre alanı zorunludur",
-        "passwordAtLeast": "Şifre en az 6 karakter olmalıdır"
+        "passwordAtLeast": "Şifre en az 6 karakter olmalıdır",
+        "nameTooShort": "Ad en az 3 karakter olmalıdır",
+        "nameTooLong": "Ad en fazla 30 karakter olmalıdır",
+        "newPasswordRequired": "Yeni şifre alanı zorunludur",
+        "newPassword": "Yeni şifre",
+        "save": "Kaydet"
       },
       "verify": {
         "title": "E-posta adresinizi onaylayın",
@@ -95,6 +103,8 @@
     "emailVerified": "E-posta adresiniz onaylandı",
     "emailAlreadyInUse": "E-posta adresi zaten kullanılıyor",
     "checkEmail": "Tebrikler! Lütfen hesabınızı doğrulamak için e-postanızı kontrol edin.",
-    "resetEmailSent": "Sıfırlama e-postası gönderildi"
+    "resetEmailSent": "Sıfırlama e-postası gönderildi",
+    "unauthorized": "Giriş yapmadınız!",
+    "updated": "Güncelleme Başarılı!"
   }
 }

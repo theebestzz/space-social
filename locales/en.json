@@ -46,7 +46,8 @@
         "oAuthAccountNotLinked": "Email already in use with different account",
         "code": "Two-Factor Authentication",
         "confirm": "Confirm",
-        "success": "Login Success"
+        "success": "Login Success",
+        "save": "Save"
       },
       "register": {
         "title": "Welcome to SpaceX",
@@ -67,9 +68,17 @@
         "email": "Email",
         "password": "Password",
         "nameRequired": "Name, Surname is required",
+        "role": "Role",
+        "selectRole": "Select Role",
         "emailRequired": "Email is required",
+        "codeRequired": "Code is required",
         "passwordRequired": "Password is required",
-        "passwordAtLeast": "Password must be at least 6 characters"
+        "passwordAtLeast": "Password must be at least 6 characters",
+        "nameTooShort": "Name must be at least 3 characters",
+        "nameTooLong": "Name must be less than 30 characters",
+        "newPasswordRequired": "New Password is required",
+        "newPassword": "New Password",
+        "save": "Save"
       }
     },
     "error": {
@@ -95,6 +104,8 @@
     "emailVerified": "E-posta adresiniz onaylandı",
     "emailAlreadyInUse": "E-posta adresi zaten kullanılıyor",
     "checkEmail": "Tebrikler! Lütfen hesabınızı doğrulamak için e-postanızı kontrol edin.",
-    "resetEmailSent": "Sıfırlama e-postası gönderildi"
+    "resetEmailSent": "Sıfırlama e-postası gönderildi",
+    "unauthorized": "Not authorized!",
+    "updated": "Updated Successfully!"
   }
 }
