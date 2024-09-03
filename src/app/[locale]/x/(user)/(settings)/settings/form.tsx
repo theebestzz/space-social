@@ -23,6 +23,7 @@ import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -99,6 +100,7 @@ export function SettingsForm({ user }: any) {
               </FormItem>
             )}
           />
+
           {user?.isOAuth === false && (
             <>
               <FormField
@@ -108,11 +110,7 @@ export function SettingsForm({ user }: any) {
                   <FormItem>
                     <FormLabel>{t("auth.forms.email")}</FormLabel>
                     <FormControl>
-                      <Input
-                        {...field}
-                        placeholder={user?.email}
-                        disabled={isPending}
-                      />
+                      <Input {...field} placeholder={user?.email} disabled />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -157,7 +155,7 @@ export function SettingsForm({ user }: any) {
             </>
           )}
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="role"
             render={({ field }) => (
@@ -181,14 +179,20 @@ export function SettingsForm({ user }: any) {
                 </Select>
               </FormItem>
             )}
-          />
+          /> */}
+
           {user?.isOAuth === false && (
             <FormField
               control={form.control}
               name="isTwoFactorEnabled"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("auth.login.code")}</FormLabel>
+                <FormItem className="flex flex-row items-center justify-between rounded-lg border bg-transparent p-3 shadow-2xl">
+                  <div className="space-y-0.5">
+                    <FormLabel>{t("auth.login.code")}</FormLabel>
+                    <FormDescription>
+                      {t("auth.forms.enableTwoFactor")}
+                    </FormDescription>
+                  </div>{" "}
                   <FormControl>
                     <Switch
                       disabled={isPending}

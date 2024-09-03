@@ -65,6 +65,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.name = token.name as string;
         session.user.email = token.email as string;
         session.user.isOAuth = token.isOauth as boolean;
+        session.user.gender = token.gender as string;
+        session.user.dateofbirth = token.dateofbirth as Date;
+        session.user.country = token.country as string;
+        session.user.state = token.state as string;
+        session.user.language = token.language as string;
+        session.user.skills = token.skills as string;
+        session.user.bio = token.bio as string;
+        session.user.coverPhoto = token.coverPhoto as string;
       }
 
       return session;
@@ -83,6 +91,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       token.email = existingUser.email;
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
+      token.gender = existingUser.gender;
+      token.dateofbirth = existingUser.dateofbirth;
+      token.country = existingUser.country;
+      token.state = existingUser.state;
+      token.language = existingUser.language;
+      token.skills = existingUser.language;
+      token.bio = existingUser.language;
+      token.coverPhoto = existingUser.language;
 
       return token;
     },

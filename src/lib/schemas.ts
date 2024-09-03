@@ -87,3 +87,23 @@ export const SettingsSchema = (t: ReturnType<typeof useTranslations>) => {
       },
     );
 };
+
+export const ProfileSchema = (t: ReturnType<typeof useTranslations>) => {
+  return z.object({
+    name: z.optional(
+      z.string().min(1, { message: t("auth.forms.nameRequired") }),
+    ),
+    email: z.optional(
+      z.string().email({ message: t("auth.forms.emailRequired") }),
+    ),
+    gender: z.optional(z.enum(["female", "male", "other"])),
+    dateofbirth: z.optional(z.date()),
+    country: z.optional(z.string()),
+    state: z.optional(z.string()),
+    language: z.optional(z.string()),
+    skills: z.optional(z.array(z.string())),
+    bio: z.optional(z.string()),
+    image: z.optional(z.string()),
+    coverPhoto: z.optional(z.string()),
+  });
+};

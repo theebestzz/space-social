@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { withUt } from "uploadthing/tw";
 
 const {
   default: flattenColorPalette,
@@ -115,4 +116,4 @@ function addVariablesForColors({ addBase, theme }: any) {
   });
 }
 
-export default config;
+export default withUt(config);

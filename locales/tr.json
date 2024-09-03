@@ -7,7 +7,9 @@
           "about": "Hakkımızda",
           "social": "Sosyal",
           "news": "Haberler",
-          "contact": "İletişim"
+          "contact": "İletişim",
+          "vision": "Vizyon",
+          "mission": "Misyon"
         }
       },
       "userMenu": {
@@ -21,10 +23,12 @@
         "accountSubtitle": "Başkaları sizi sitede bu şekilde görecek.",
         "settingsSubtitle": "Kullanıcı ayarlarınızı düzenleyin.",
         "preferences": "Tercihler",
+        "preferencesSubtitle": "Görünümü ve dili özelleştirin.",
         "security": "Gizlilik ve Güvenlik",
         "subtitle": "Kullanıcı, hesap ve tercih ayarlarınızı yönetin",
         "hello": "Merhaba",
-        "loggedOut": "Çıkış Yapıldı"
+        "loggedOut": "Çıkış Yapıldı",
+        "share": "Paylaşım Yap"
       }
     },
     "hero": {
@@ -61,6 +65,7 @@
         "role": "Rol",
         "selectRole": "Rol Seçin",
         "emailRequired": "E-posta alanı zorunludur",
+        "phoneRequired": "Telefon alanı zorunludur",
         "codeRequired": "Kod alanı zorunludur",
         "passwordRequired": "Şifre alanı zorunludur",
         "passwordAtLeast": "Şifre en az 6 karakter olmalıdır",
@@ -68,7 +73,46 @@
         "nameTooLong": "Ad en fazla 30 karakter olmalıdır",
         "newPasswordRequired": "Yeni şifre alanı zorunludur",
         "newPassword": "Yeni şifre",
-        "save": "Kaydet"
+        "enableTwoFactor": "2 Adımlı Doğrulamayı Etkinleştir",
+        "save": "Kaydet",
+        "dateofbirth": {
+          "title": "Doğum Tarihi",
+          "select": "Doğum Tarihi Seç"
+        },
+        "country": {
+          "title": "Ülke",
+          "select": "Ülke Seç"
+        },
+        "state": {
+          "title": "Şehir",
+          "select": "Şehir Seç"
+        },
+        "language": {
+          "title": "Dil",
+          "select": "Dil Seç"
+        },
+        "skills": {
+          "title": "Yetenekler",
+          "select": "Yetenek Seç"
+        },
+        "bio": {
+          "title": "Biyografi",
+          "placeholder": "Bize biraz kendinizden bahseder misiniz?"
+        },
+        "photo": {
+          "avatar": "Profil Fotoğrafı",
+          "coverPhoto": "Kapak Fotoğrafı",
+          "choose": "Fotoğraf Seç",
+          "loading": "Yükleniyor...",
+          "drag": "Dosyaları seçin veya sürükleyip bırakın"
+        },
+        "gender": {
+          "title": "Cinsiyet",
+          "select": "Cinsiyet Seç",
+          "male": "Erkek",
+          "female": "Kadın",
+          "other": "Diğer"
+        }
       },
       "verify": {
         "title": "E-posta adresinizi onaylayın",
@@ -87,7 +131,8 @@
     "theme": {
       "dark": "Koyu",
       "light": "Açık",
-      "system": "Sistem"
+      "system": "Sistem",
+      "theme": "Tema"
     },
     "default": "Bir hata oluştu, lütfen tekrar deneyin",
     "invalidField": "Geçersiz alan!",
@@ -105,6 +150,9 @@
     "checkEmail": "Tebrikler! Lütfen hesabınızı doğrulamak için e-postanızı kontrol edin.",
     "resetEmailSent": "Sıfırlama e-postası gönderildi",
     "unauthorized": "Giriş yapmadınız!",
-    "updated": "Güncelleme Başarılı!"
+    "updated": "Güncelleme Başarılı!",
+    "language": "Dil",
+    "search": "Ara",
+    "noResults": "Sonuç yok"
   }
 }

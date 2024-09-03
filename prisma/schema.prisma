@@ -12,6 +12,12 @@ enum UserRole {
   USER
 }
 
+enum Gender {
+  female
+  male
+  other
+}
+
 model User {
   id                    String                 @id @default(cuid())
   name                  String?
@@ -22,10 +28,18 @@ model User {
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
   image                 String?
+  coverPhoto            String?
   accounts              Account[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  gender      Gender?
+  dateofbirth DateTime?
+  country     String?
+  state       String?
+  language    String?
+  bio         String?
+  skills      String[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Account {

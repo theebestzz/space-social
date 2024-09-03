@@ -5,6 +5,8 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 
+import { useTranslations } from "next-intl";
+
 import { useIsMobile } from "@/hooks/use-is-mobile";
 
 import { Button } from "@/components/ui/button";
@@ -15,7 +17,6 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
-import { useTranslations } from "next-intl";
 
 export function ThemeSwitcher() {
   const t = useTranslations("site.theme");

@@ -16,7 +16,7 @@ export default async function XLayout({ children }: XLayoutProps) {
   return (
     <div>
       <Navbar user={user} />
-      <div className="border-t md:container max-md:px-2">{children}</div>
+      <div className="border-t lg:container max-lg:px-2">{children}</div>
     </div>
   );
 }

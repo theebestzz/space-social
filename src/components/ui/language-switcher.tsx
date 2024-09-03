@@ -1,6 +1,6 @@
-// language-switcher.tsx
-
 "use client";
+
+import Image from "next/image";
 
 import { type PointerEvent, useState } from "react";
 import { ChevronDown, Languages } from "lucide-react";
@@ -17,7 +17,6 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
-import Image from "next/image";
 
 const locales = Object.entries(labels);
 

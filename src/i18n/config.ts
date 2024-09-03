@@ -17,7 +17,6 @@ export const labels: {
     flag: TrFlag,
   },
 };
-
 export const pathnames: { [key: string]: { en: string; tr: string } | string } =
   {
     "/": "/",

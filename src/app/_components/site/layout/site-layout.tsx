@@ -10,9 +10,9 @@ export async function SiteLayout({ children }: Props) {
   const links = await getNavLinks();
   const user = await getUser();
   return (
-    <div>
+    <>
       <SiteHeader links={links} user={user} />
       {children}
-    </div>
+    </>
   );
 }
